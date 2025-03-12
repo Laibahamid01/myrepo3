@@ -7,36 +7,178 @@
     <title>Snacks Smarkty</title>
 </head>
 <body>
-    <a href="" class="logo"><img src="/images/logo1.png" alt="">
-        <nav class="navbar">
-        <a href="">Home</a>
-        <a href="">Chips & Crisps</a>
-        <a href="">Tasty Treats</a>
-        <a href="">Beverage Creations</a>
-        <a href="">About Us</a>
-        <a href="">Reviews</a>
-        <a href="">Contact Us</a>
-        </nav>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "poppins", sans-serif;
+}
 
-        <div class="icons">
-            <div class="search-icon"><i class="fas fa-search fa-2x"></i> </div>
-            <div class="cart-icon">
-                <i class="fas fa-shopping-cart"></i>
-                </div>
-            <div class="menu-icon">
-                <i class="fas fa-bars"></i>
-                </div>
+  :root{
+ 
+    --bg-color: black;
+    --text-color: white;
+    --main-color: #e4b381;     
+}
+
+html{
+
+    font-size: 62.5;
+    overflow-x:hidden;
+}
+
+body{
+
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background:rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1); 
+}
+
+span{
+    color: var(--main-color);
+}
+
+.navbar a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active{
+             color: var(--main-color);
+           border-bottom: 3px solid var(--main-color);
+}
+
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 9% 10rem;
+}
+
+.home{
+    display: flex;
+    justify-content: right;
+    text-align: left;
+    align-items: center;
+    gap: 8rem;
+    background: url(8de.jpg) center
+    no-repeat ;
+    background-size: cover;
+}
+
+.home-content h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+
+.home-content h1{
+
+    font-size: 8rem;
+    font-weight: 500;
+    max-width: 750px;
+    margin: 3rem 0;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: white;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    background: var(--bg-color);
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+
+</style>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">
+            Quick <span>Snacks</span>
+        </a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>>
+
+        
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#savory bites"> Savory Bites</a>
+            <a href="#sweet treats"> Sweet Treats</a>
+            <a href="#reviews"> Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <img src="" alt="">
+            <h3>Welcome to</h3>
+            <h1> Quick <span>Snacks</span></h1>
+            <p>"Welcome to [ QUICK SNACKS ], your go-to destination for quick, delicious snacks that satisfy any craving! Whether you're in the mood for crunchy savory bites, 
+                refreshing beverages, or irresistible sweets, we've got something for every taste. Perfect for on-the-go moments or a quick pick-me-up, our snacks are crafted to bring joy and flavor to your day. 
+                Explore, snack, and enjoy – it's that simple!"Feel free to adjust or personalize it further based on your brand's vibe!</p>
                 
-                <div class="menu-icon">
-                    <i class="fas fa-bars"></i>
-                    </div>
-             <div class="search-form">
-            <input type="search" 
-            name="search" 
-            id="search-box" 
-            placeholder="searching here...">
-    
-            <label for="search-box" class="fas fa-search"></label>
+                <a href="#" class="btn"></a>
         </div>
+    </section>
+    
+
+    
 </body>
 </html>
+   
+                
+    
+           
