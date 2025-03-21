@@ -90,10 +90,75 @@ span{
     display: none;
 }
 
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    z-index: 1000;
+    transition: 0.3s ease-in-out;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    font-size: 1.6rem;
+    transition: 0.3s ease-in-out;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background: var(--main-color);
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive Dropdown for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-content {
+        position: relative;
+        width: 100%;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        position: relative;
+    }
+}
+
 section{
     min-height: 100vh;
     padding: 10rem 9% 10rem;
 }
+
 
 .home{
     display: flex;
@@ -141,288 +206,233 @@ section{
     border: 2px solid var(--main-color);
 }
 
-.header .icons{
-    display: flex;
-}
-
-.header .icons div{
+    .snack-cards {
+    padding: 5rem 9%;
+    text-align: center;
+    background: black;
     color: white;
-    cursor: pointer;
-    font-size: 0.8rem;
-    margin-left:5rem;
 }
 
-.header .icons:hover{
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
     color: var(--main-color);
-    border-bottom: 2px solid var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-    body {
-  width: 100vw;
-  background-color: #1D1D1D;
-  margin: 0;
-  font-family: helvetica;
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
 }
 
-.about {
-  position: fixed;
-  z-index: 10;
-  bottom: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  transition: all 0.2s ease;
-}
-.about .bg_links {
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 100%;
-  backdrop-filter: blur(5px);
-  position: absolute;
-}
-.about .logo {
-  width: 40px;
-  height: 40px;
-  z-index: 9;
-  background-image: url(https://rafaelalucas91.github.io/assets/codepen/logo_white.svg);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: 10px 7px;
-  opacity: 0.9;
-  transition: all 1s 0.2s ease;
-  bottom: 0;
-  right: 0;
-}
-.about .social {
-  opacity: 0;
-  right: 0;
-  bottom: 0;
-}
-.about .social .icon {
-  width: 100%;
-  height: 100%;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  display: flex;
-  transition: all 0.2s ease, background-color 0.4s ease;
-  opacity: 0;
-  border-radius: 100%;
-}
-.about .social.portfolio {
-  transition: all 0.8s ease;
-}
-.about .social.portfolio .icon {
-  background-image: url(https://rafaelalucas91.github.io/assets/codepen/link.svg);
-}
-.about .social.dribbble {
-  transition: all 0.3s ease;
-}
-.about .social.dribbble .icon {
-  background-image: url(https://rafaelalucas91.github.io/assets/codepen/dribbble.svg);
-}
-.about .social.linkedin {
-  transition: all 0.8s ease;
-}
-.about .social.linkedin .icon {
-  background-image: url(https://rafaelalucas91.github.io/assets/codepen/linkedin.svg);
-}
-.about:hover {
-  width: 105px;
-  height: 105px;
-  transition: all 0.6s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-}
-.about:hover .logo {
-  opacity: 1;
-  transition: all 0.6s ease;
-}
-.about:hover .social {
-  opacity: 1;
-}
-.about:hover .social .icon {
-  opacity: 0.9;
-}
-.about:hover .social:hover {
-  background-size: 28px;
-}
-.about:hover .social:hover .icon {
-  background-size: 65%;
-  opacity: 1;
-}
-.about:hover .social.portfolio {
-  right: 0;
-  bottom: calc(100% - 40px);
-  transition: all 0.3s 0s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-}
-.about:hover .social.portfolio .icon:hover {
-  background-color: #698fb7;
-}
-.about:hover .social.dribbble {
-  bottom: 45%;
-  right: 45%;
-  transition: all 0.3s 0.15s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-}
-.about:hover .social.dribbble .icon:hover {
-  background-color: #ea4c89;
-}
-.about:hover .social.linkedin {
-  bottom: 0;
-  right: calc(100% - 40px);
-  transition: all 0.3s 0.25s cubic-bezier(0.64, 0.01, 0.07, 1.65);
-}
-.about:hover .social.linkedin .icon:hover {
-  background-color: #0077b5;
-}
-
-.wrapper {
-  width: 100vw;
-  margin: 0 auto;
-  height: 400px;
-  background-color: #161616;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 767px) {
-  .wrapper {
-    height: 700px;
-  }
-}
-.content {
-  max-width: 1024px;
-  width: 100%;
-  padding: 0 4%;
-  padding-top: 250px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 767px) {
-  .content {
-    padding-top: 300px;
-    flex-direction: column;
-  }
-}
 .card {
-  width: 100%;
-  max-width: 300px;
-  min-width: 200px;
-  height: 250px;
-  background-color: #292929;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
-  border: 2px solid rgba(7, 7, 7, 0.12);
-  font-size: 16px;
-  transition: all 0.3s ease;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.icon {
-  margin: 0 auto;
-  width: 100%;
-  height: 80px;
-  max-width: 80px;
-  background: linear-gradient(90deg, #FF7E7E 0%, #FF4848 40%, rgba(0, 0, 0, 0.28) 60%);
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  transition: all 0.8s ease;
-  background-position: 0px;
-  background-size: 200px;
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.material-icons.md-18 {
-  font-size: 18px;
+.card h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: var(--main-color);
 }
 
-.material-icons.md-24 {
-  font-size: 24px;
+.card p {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
 }
 
-.material-icons.md-36 {
-  font-size: 36px;
+.card .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--main-color);
+    border-radius: 5rem;
+    font-size: 1.4rem;
+    color: white;
+    transition: 0.3s ease-in-out;
 }
 
-.material-icons.md-48 {
-  font-size: 48px;
-}
-
-.card .title {
-  width: 100%;
-  margin: 0;
-  text-align: center;
-  margin-top: 30px;
-  color: white;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-
-.card .text {
-  width: 80%;
-  margin: 0 auto;
-  font-size: 13px;
-  text-align: center;
-  margin-top: 20px;
-  color: white;
-  font-weight: 200;
-  letter-spacing: 2px;
-  opacity: 0;
-  max-height: 0;
-  transition: all 0.3s ease;
+.card .btn:hover {
+    background: white;
+    color: black;
 }
 
 .card:hover {
-  height: 270px;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
-.card:hover .info {
-  height: 90%;
+/* Responsive */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
 }
 
-.card:hover .text {
-  transition: all 0.3s ease;
-  opacity: 1;
-  max-height: 40px;
+.about-us {
+    padding: 5rem 9%;
+    background: black;
+    color: white;
+    text-align: center;
 }
 
-.card:hover .icon {
-  background-position: -120px;
-  transition: all 0.3s ease;
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.card:hover .icon i {
-  background: linear-gradient(90deg, #FF7E7E, #FF4848);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  opacity: 1;
-  transition: all 0.3s ease;
+.about-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
-    .footer{
+.about-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    color: var(--main-color);
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.about-content .btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.about-content .btn:hover {
+    background: white;
+    color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+}
+
+.queries {
+    padding: 5rem 9%;
+    background: black;
+    color: white;
+    text-align: center;
+}
+
+.queries-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.queries h2 {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.queries p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.input-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.input-box input {
+    width: 48%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 2px solid var(--main-color);
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 2px solid var(--main-color);
+    background: black;
+    color: white;
+    border-radius: 5px;
+    margin-top: 1rem;
+    resize: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: white;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: white;
+    color: black;
+    border: 2px solid var(--main-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .input-box {
+        flex-direction: column;
+    }
+
+    .input-box input {
+        width: 100%;
+    }
+}
+
+
+
+.footer{
     position: relative;
     bottom: 0;
     width: 100%;
@@ -501,8 +511,16 @@ section{
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About Us</a>
-            <a href="#savory bites"> Savory Bites</a>
-            <a href="#sweet treats"> Sweet Treats</a>
+            <!-- Dropdown for Snacks -->
+        <div class="dropdown">
+            <a href="#snacks" class="dropbtn">Snack Items <i class='bx bx-chevron-down'></i></a>
+            <div class="dropdown-content">
+                <a href="#healthy-snacks">Healthy Snacks</a>
+                <a href="#kids-snacks">Snacks for Kids</a>
+                <a href="#sweets">Sweets</a>
+                <a href="#smoothies">Smoothies</a>
+            </div>
+        </div>
             <a href="#reviews"> Reviews</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -527,63 +545,81 @@ section{
     </section>
 
     
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- about -->
-<div class="about">
-   <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
-      <span class="icon"></span>
-   </a>
-   <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
-      <span class="icon"></span>
-   </a>
-   <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
-      <span class="icon"></span>
-   </a>
-   <a class="bg_links logo"></a>
-</div>
-<!-- end about -->
    
-   <div class="content">
-      <!-- card -->
-      <div class="card">
-         
-            
-            <p class="title">Profile</p>
-            <p class="text">Click to see or edit your profile page.</p>
-         
-      </div>
-      <!-- end card -->
-      <!-- card -->
-      <div class="card">
-         
-           
-            <p class="title">Favourites</p>
-            <p class="text">Check all your favourites in one place.</p>
-         
-      </div>
-      <!-- end card -->
-      <!-- card -->
-      <div class="card">
-         
-           
-            <p class="title">Contacts</p>
-            <p class="text">Add or change your contacts and links.</p>
-         
-      </div>
-      <!-- end card -->
-   
-<!-- card -->
-<div class="card">
-         
+    <section class="snack-cards" id="snacks">
+        <h2 class="section-title">Explore Our Snack Categories</h2>
+        <div class="card-container">
+            <!-- Healthy Snacks -->
+            <div class="card">
+                <img src="healthy-snacks.jpg" alt="Healthy Snacks">
+                <h3>Healthy Snacks</h3>
+                <p>Nutritious and delicious snacks to keep you energized throughout the day.</p>
+                <a href="#" class="btn">Explore</a>
+            </div>
     
-    <p class="title">Contacts</p>
-    <p class="text">Add or change your contacts and links.</p>
- 
-</div>
-    <!-- end card -->
-   </div>
-</div>
+            <!-- Snacks for Kids -->
+            <div class="card">
+                <img src="kids-snacks.jpg" alt="Snacks for Kids">
+                <h3>Snacks for Kids</h3>
+                <p>Fun and tasty snacks that kids will absolutely love!</p>
+                <a href="#" class="btn">Explore</a>
+            </div>
+    
+            <!-- Sweets -->
+            <div class="card">
+                <img src="sweets.jpg" alt="Sweets">
+                <h3>Sweets</h3>
+                <p>Indulge in our mouth-watering sweet treats.</p>
+                <a href="#" class="btn">Explore</a>
+            </div>
+    
+            <!-- Smoothies -->
+            <div class="card">
+                <img src="smoothies.jpg" alt="Smoothies">
+                <h3>Smoothies</h3>
+                <p>Refreshing and healthy smoothies to keep you cool.</p>
+                <a href="#" class="btn">Explore</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-us" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="\bg.jpg1.html" alt="About Quick Snacks">
+            </div>
+            <div class="about-content">
+                <h2>About <span>Quick Snacks</span></h2>
+                <p>At Quick Snacks, we believe that delicious and convenient snacks can brighten your day. 
+                   Whether you're looking for healthy options, fun treats for kids, or indulgent sweets, we've got it all! 
+                   Our passion is to deliver the best flavors with quality ingredients, ensuring every bite is a delight.</p>
+                <a href="#contact" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="queries" id="queries">
+        <div class="queries-container">
+            <h2>Have Any <span>Queries?</span></h2>
+            <p>If you have any questions or need more information, feel free to reach out! Just fill in the form below, and we'll get back to you soon.</p>
+    
+            <form action="#" method="POST">
+                <div class="input-box">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+    
+
+
+   
+
 
 
     <footer class="footer">
